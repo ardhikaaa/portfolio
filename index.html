@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ardhika Raditya — Web Developer</title>
+  <meta name="description" content="Full-stack Web Developer. Membangun web yang cepat, aman, dan scalable." />
+
+  <!-- Google Fonts: Space Grotesk (display) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav id="navbar" role="navigation">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="#hero" class="nav-logo">Ardhika<span>.</span></a>
+        <ul class="nav-links">
+          <li><a href="#tentang" data-section="tentang">Tentang</a></li>
+          <li><a href="#proyek" data-section="proyek">Proyek</a></li>
+          <li><a href="#sertifikat" data-section="sertifikat">Sertifikat</a></li>
+          <li><a href="#kontak" data-section="kontak">Kontak</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <ul class="mobile-menu" id="mobileMenu">
+    <li><a href="#tentang">Tentang</a></li>
+    <li><a href="#proyek">Proyek</a></li>
+    <li><a href="#sertifikat">Sertifikat</a></li>
+    <li><a href="#kontak">Kontak</a></li>
+  </ul>
+
+  <!-- Hero -->
+  <section id="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-label">
+            <span class="hero-label-dot"></span>
+            <span class="eyebrow">Web Developer</span>
+          </div>
+
+          <div class="hero-headline">
+            <span class="hero-name-outline">ARDHIKA</span>
+            <span class="hero-name-fill">RADITYA</span>
+            <p class="hero-tagline">Membangun web yang cepat, aman, dan scalable<span class="cursor"></span></p>
+          </div>
+
+          <p class="hero-desc">
+            Web Developer lulusan SMK Rekayasa Perangkat Lunak dengan pengalaman lebih dari 3 tahun mempelajari dan mengembangkan aplikasi berbasis web. Berfokus pada pengembangan website modern menggunakan Laravel, PHP, MySQL, JavaScript, dan Tailwind CSS untuk menciptakan solusi yang responsif, fungsional, dan mudah digunakan.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="#proyek" class="btn btn-primary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              Lihat Proyek
+            </a>
+            <a href="#kontak" class="btn btn-ghost">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 01-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 011-.9 14 14 0 0014 0 1 1 0 011 .9z"/></svg>
+              Hubungi Saya
+            </a>
+          </div>
+        </div>
+
+        <!-- Floating code card visual -->
+        <div class="hero-visual">
+          <div class="code-card">
+            <div class="code-card-bar">
+              <span class="dot-red"></span>
+              <span class="dot-yellow"></span>
+              <span class="dot-green"></span>
+            </div>
+
+            <div>
+              <span class="code-comment">// ardhika.config.js</span><br><br>
+
+              <span class="code-kw">export const</span>
+              <span class="code-fn">developer</span> = {<br>
+
+              &nbsp;&nbsp;<span class="code-key">name</span>:
+              <span class="code-str">"Ardhika Raditya"</span>,<br>
+
+              &nbsp;&nbsp;<span class="code-key">role</span>:
+              <span class="code-str">"Web Developer"</span>,<br>
+
+              &nbsp;&nbsp;<span class="code-key">experience</span>:
+              <span class="code-num">3</span>,
+              <span class="code-comment">// years learning & building</span><br>
+
+              &nbsp;&nbsp;<span class="code-key">stack</span>: [<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-str">"Laravel"</span>,<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-str">"PHP"</span>,<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-str">"MySQL"</span>,<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-str">"JavaScript"</span>,<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-str">"Tailwind CSS"</span><br>
+              &nbsp;&nbsp;],<br>
+
+              &nbsp;&nbsp;<span class="code-key">projects</span>:
+              <span class="code-num">15</span>,<br>
+
+              &nbsp;&nbsp;<span class="code-key">focus</span>:
+              <span class="code-str">"Web Solutions"</span>,<br>
+
+              &nbsp;&nbsp;<span class="code-key">available</span>:
+              <span class="code-kw">true</span><br>
+
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--Tentang -->
+  <section id="tentang">
+    <div class="container">
+      <div class="about-grid">
+
+        <div class="about-img-wrap reveal">
+          <img src="/Assets/profile.jpeg" alt="Ardhika Raditya" loading="lazy" />
+          <div class="about-img-accent"></div>
+        </div>
+
+        <div>
+          <div class="section-header">
+            <span class="eyebrow">// 01 Tentang Saya</span>
+            <h2 class="section-title reveal reveal-delay-1">Orang di balik<br>baris kode<span class="accent-dot">.</span></h2>
+            <div class="section-line reveal reveal-delay-2"></div>
+          </div>
+
+          <p class="about-bio reveal reveal-delay-2">
+            Hai, saya Ardhika — seorang Web Developer dengan ketertarikan kuat pada pengembangan aplikasi web yang rapi, efisien, dan andal. Saya telah mempelajari dan membangun berbagai proyek web selama kurang lebih 3 tahun, mulai dari company profile, landing page, hingga sistem informasi dan dashboard admin.
+            <br>Saya percaya bahwa website yang baik tidak hanya terlihat menarik, tetapi juga memiliki struktur kode yang jelas, mudah dipelihara, dan siap dikembangkan. Saat tidak sedang menulis kode, saya menghabiskan waktu untuk memperdalam Laravel, JavaScript, dan praktik terbaik pengembangan web modern.
+          </p>
+
+          <div class="about-stats reveal reveal-delay-3">
+            <div class="stat-item">
+              <div class="stat-num">3+</div>
+              <div class="stat-label">Tahun Pengalaman</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">15+</div>
+              <div class="stat-label">Proyek Selesai</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">5+</div>
+              <div class="stat-label">Sertifikat</div>
+            </div>
+          </div>
+
+          <div class="keunggulan-grid reveal reveal-delay-4">
+            <!-- Keunggulan 1 -->
+            <div class="keunggulan-card">
+              <svg class="keunggulan-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/>
+              </svg>
+              <div class="keunggulan-title">Clean Code</div>
+              <div class="keunggulan-desc">Kode yang rapi, terstruktur, dan mudah dipelihara</div>
+            </div>
+            <!-- Keunggulan 2 -->
+            <div class="keunggulan-card">
+              <svg class="keunggulan-icon" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="1.5">
+                <path d="M23.9,11.437A12,12,0,0,0,0,13a11.878,11.878,0,0,0,3.759,8.712A4.84,4.84,0,0,0,7.113,23H16.88a4.994,4.994,0,0,0,3.509-1.429A11.944,11.944,0,0,0,23.9,11.437Zm-4.909,8.7A3,3,0,0,1,16.88,21H7.113a2.862,2.862,0,0,1-1.981-.741A9.9,9.9,0,0,1,2,13,10.014,10.014,0,0,1,5.338,5.543,9.881,9.881,0,0,1,11.986,3a10.553,10.553,0,0,1,1.174.066,9.994,9.994,0,0,1,5.831,17.076ZM7.807,17.285a1,1,0,0,1-1.4,1.43A8,8,0,0,1,12,5a8.072,8.072,0,0,1,1.143.081,1,1,0,0,1,.847,1.133.989.989,0,0,1-1.133.848,6,6,0,0,0-5.05,10.223Zm12.112-5.428A8.072,8.072,0,0,1,20,13a7.931,7.931,0,0,1-2.408,5.716,1,1,0,0,1-1.4-1.432,5.98,5.98,0,0,0,1.744-5.141,1,1,0,0,1,1.981-.286Zm-5.993.631a2.033,2.033,0,1,1-1.414-1.414l3.781-3.781a1,1,0,1,1,1.414,1.414Z"/>
+              </svg>
+              <div class="keunggulan-title">Performance-Oriented</div>
+              <div class="keunggulan-desc">Pengembangan website dengan perhatian pada performa terbaik.</div>
+            </div>
+            <!-- Keunggulan 3 -->
+            <div class="keunggulan-card">
+              <svg class="keunggulan-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="5" y="2" width="14" height="20" rx="2"/>
+                <path d="M12 18h.01"/>
+              </svg>
+              <div class="keunggulan-title">Responsive Design</div>
+              <div class="keunggulan-desc">Tampil sempurna di semua ukuran layar</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proyek -->
+  <section id="proyek">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">// 02 Proyek</span>
+        <h2 class="section-title reveal">Karya yang berbicara<br>sendiri<span class="accent-dot">.</span></h2>
+        <div class="section-line reveal"></div>
+      </div>
+
+      <div class="filter-tabs reveal">
+        <button class="filter-btn active" data-filter="all">Semua</button>
+        <button class="filter-btn" data-filter="Web App">Web App</button>
+        <button class="filter-btn" data-filter="Website">Website</button>
+      </div>
+
+      <div class="proyek-grid" id="proyekGrid">
+        <!-- Proyek 1 -->
+        <div class="proyek-card reveal" data-category="Web App">
+          <img src="https://placehold.co/600x400/161622/E8FF47?text=UKS+App" alt="Website UKS" class="proyek-img" loading="lazy" />
+          <div class="proyek-card-body">
+            <span class="proyek-badge">Web App</span>
+            <div class="proyek-name">Website UKS</div>
+            <p class="proyek-desc">Aplikasi manajemen kunjungan UKS dengan fitur laporan lengkap dan dashboard real-time.</p>
+            <a href="#" class="proyek-link">
+              Lihat Detail
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Proyek 2 -->
+        <div class="proyek-card reveal reveal-delay-1" data-category="Website">
+          <img src="https://placehold.co/600x400/161622/80CEFF?text=Company+Profile" alt="Company Profile" class="proyek-img" loading="lazy" />
+          <div class="proyek-card-body">
+            <span class="proyek-badge">Website</span>
+            <div class="proyek-name">Company Profile</div>
+            <p class="proyek-desc">Website perusahaan properti dengan performa tinggi, skor Lighthouse 97, dan tampilan yang memukau.</p>
+            <a href="#" class="proyek-link">
+              Lihat Detail
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Proyek 3 -->
+        <div class="proyek-card reveal reveal-delay-2" data-category="Web App">
+          <img src="https://placehold.co/600x400/161622/FF8C69?text=E-Learning" alt="E-Learning Platform" class="proyek-img" loading="lazy" />
+          <div class="proyek-card-body">
+            <span class="proyek-badge">Web App</span>
+            <div class="proyek-name">E-Learning Platform</div>
+            <p class="proyek-desc">Platform kursus online dengan fitur live streaming, manajemen konten, dan progress tracking.</p>
+            <a href="#" class="proyek-link">
+              Lihat Detail
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Proyek 4 -->
+        <div class="proyek-card reveal reveal-delay-1" data-category="Website">
+          <img src="https://placehold.co/600x400/161622/C678DD?text=Landing+Page" alt="Landing Page Campaign" class="proyek-img" loading="lazy" />
+          <div class="proyek-card-body">
+            <span class="proyek-badge">Website</span>
+            <div class="proyek-name">Landing Page Campaign</div>
+            <p class="proyek-desc">Landing page dengan konversi 25% untuk campaign marketing — dioptimasi dari copy hingga kecepatan loading.</p>
+            <a href="#" class="proyek-link">
+              Lihat Detail
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cert -->
+  <section id="sertifikat">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">// 03 Sertifikat</span>
+        <h2 class="section-title reveal">Kata mereka yang<br>sudah merasakan<span class="accent-dot">.</span></h2>
+        <div class="section-line reveal"></div>
+      </div>
+
+      <div class="cert-grid">
+        <!-- Testimoni 1 -->
+        <div class="cert-card reveal">
+          <div class="cert-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          </div>
+          <p class="cert-quote">Ardhika bukan cuma ngoding — dia benar-benar mengerti bisnis kami. Website yang ia bangun langsung ningkatin kepercayaan calon klien dari hari pertama live. Responsif, cepat, dan elegan.</p>
+          <div class="cert-author">
+            <img src="https://placehold.co/60x60/1E1E2E/6B6B80?text=BW" alt="Bima Wicaksono" class="cert-avatar" loading="lazy" />
+            <div>
+              <div class="cert-name">Bima Wicaksono</div>
+              <div class="cert-role">Founder, Konstruksi Maju Jaya</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimoni 2 -->
+        <div class="cert-card reveal reveal-delay-1">
+          <div class="cert-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          </div>
+          <p class="cert-quote">Platform e-learning kami sekarang bisa handle ratusan user serentak tanpa lag. Ardhika sangat komunikatif selama pengerjaan — tidak ada yang bikin kami tebak-tebakan soal progres.</p>
+          <div class="cert-author">
+            <img src="https://placehold.co/60x60/1E1E2E/6B6B80?text=RS" alt="Rina Setyawati" class="cert-avatar" loading="lazy" />
+            <div>
+              <div class="cert-name">Rina Setyawati</div>
+              <div class="cert-role">CEO, EduPath Academy</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimoni 3 -->
+        <div class="cert-card reveal reveal-delay-2">
+          <div class="cert-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          </div>
+          <p class="cert-quote">Konversi landing page campaign kami naik 3× setelah dikerjakan Ardhika. Dia paham betul kombinasi antara desain, copywriting, dan optimasi teknis yang bikin pengunjung tidak kabur.</p>
+          <div class="cert-author">
+            <img src="https://placehold.co/60x60/1E1E2E/6B6B80?text=DP" alt="Danu Prasetyo" class="cert-avatar" loading="lazy" />
+            <div>
+              <div class="cert-name">Danu Prasetyo</div>
+              <div class="cert-role">Marketing Manager, Nexora Digital</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontak -->
+  <section id="kontak">
+    <div class="container">
+      <div class="kontak-layout">
+
+        <div>
+          <span class="eyebrow reveal">// 04 Kontak</span>
+          <h2 class="kontak-headline reveal reveal-delay-1">Ada ide atau pertanyaan?</h2>
+          <p class="kontak-sub reveal reveal-delay-2">Silakan hubungi saya jika ingin berdiskusi, bertanya, atau sekadar berbagi ide seputar pengembangan web.</p>
+
+          <div class="kontak-items reveal reveal-delay-2">
+            <div class="kontak-item">
+              <div class="kontak-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <div class="kontak-item-label">Email</div>
+                <a href="mailto:radityaardhika@gmail.com" class="kontak-item-val">radityaardhika@gmail.com</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="kontak-social reveal reveal-delay-3">
+            <!-- Instagram -->
+            <a href="https://instagram.com/radityaardhika" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <!-- LinkedIn -->
+            <a href="https://linkedin.com/in/ardhika-raditya" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <!-- GitHub -->
+            <a href="https://github.com/ardhikaaa" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Call-out box -->
+        <div class="kontak-callout reveal reveal-delay-2">
+          <div class="callout-pre">Mulai dari sini</div>
+          <h3 class="callout-title">Kirim email,<br>saya balas cepat.</h3>
+          <p class="callout-desc">
+            Tidak perlu formulir panjang atau proses yang rumit. Anda bisa langsung menghubungi saya untuk berbagi ide atau berdiskusi seputar proyek dan pengembangan web.
+          </p>
+          <a href="mailto:radityaardhika@gmail.com" class="callout-email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            radityaardhika@gmail.com
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="#hero" class="nav-logo">Ardhika<span>.</span></a>
+          <p class="footer-tagline">Membangun web yang cepat,<br>aman, dan scalable — serius.</p>
+        </div>
+
+        <div>
+          <div class="footer-heading">Navigasi</div>
+          <ul class="footer-links">
+            <li><a href="#tentang">Tentang</a></li>
+            <li><a href="#proyek">Proyek</a></li>
+            <li><a href="#sertifikat">Sertifikat</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-heading">Sosial</div>
+          <div class="footer-socials">
+            <a href="https://instagram.com/radityaardhika" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/ardhika-raditya-19636138a/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="https://github.com/ardhikaaa" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 <span>Ardhika Raditya</span>. All rights reserved.</p>
+        <p class="footer-copy" style="font-size:12px;">Dibuat dengan ☕ dan banyak tab browser terbuka.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+
+</body>
+</html>
