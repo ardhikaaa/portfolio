@@ -68,25 +68,64 @@ if (lineFill) {
 /* ===PROJECT FILTER=== */
 const filterBtns = document.querySelectorAll('.filter-btn');
 const proyekCards = document.querySelectorAll('.proyek-card');
+const showMoreBtn = document.getElementById('showMoreBtn');
+const INITIAL_COUNT = 3;
+let isExpanded = false;
+
+function updateCardVisibility() {
+    const activeFilter = document.querySelector('.filter-btn.active').dataset.filter;
+    let matchCount = 0;
+
+    proyekCards.forEach((card) => {
+        const cat = card.dataset.category;
+        const matchesFilter = activeFilter === 'all' || cat === activeFilter;
+
+        if (!matchesFilter) {
+            card.style.display = 'none';
+            return;
+        }
+
+        if (isExpanded) {
+            card.style.display = '';
+        } else {
+            card.style.display = matchCount < INITIAL_COUNT ? '' : 'none';
+        }
+        card.classList.add('visible');
+        matchCount++;
+    });
+
+    updateButtonState();
+}
+
+function updateButtonState() {
+    const activeFilter = document.querySelector('.filter-btn.active').dataset.filter;
+    const totalMatch = Array.from(proyekCards).filter(card => {
+        const cat = card.dataset.category;
+        return activeFilter === 'all' || cat === activeFilter;
+    }).length;
+
+    if (totalMatch <= INITIAL_COUNT) {
+        showMoreBtn.style.display = 'none';
+    } else {
+        showMoreBtn.style.display = '';
+        showMoreBtn.textContent = isExpanded ? 'Sembunyikan' : 'Lihat proyek lainnya';
+    }
+}
 
 filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
     filterBtns.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-
-    const filter = btn.dataset.filter;
-    proyekCards.forEach(card => {
-        const cat = card.dataset.category;
-        if (filter === 'all' || cat === filter) {
-        card.removeAttribute('data-hidden');
-        card.style.display = '';
-        } else {
-        card.setAttribute('data-hidden', '');
-        card.style.display = 'none';
-        }
-    });
+    updateCardVisibility();
     });
 });
+
+showMoreBtn.addEventListener('click', () => {
+    isExpanded = !isExpanded;
+    updateCardVisibility();
+});
+
+updateCardVisibility();
 
 /* ===SMOOTH SCROLL JS FALLBACK=== */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
