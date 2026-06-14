@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proyek — Ardhika Raditya</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .project-detail {
+      padding: 120px 0 80px;
+      max-width: 820px;
+      margin: 0 auto;
+    }
+    .project-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      margin-bottom: 40px;
+      transition: gap var(--transition);
+    }
+    .project-back:hover { gap: 14px; }
+    .project-img {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin-bottom: 40px;
+    }
+    .project-title {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .project-status {
+      display: inline-block;
+      font-size: 11px;
+      font-family: var(--font-display);
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(232,255,71,0.1);
+      border: 1px solid rgba(232,255,71,0.2);
+      padding: 4px 12px;
+      border-radius: 4px;
+      margin-bottom: 24px;
+    }
+    .project-desc {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 32px;
+    }
+    .project-section-title {
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 40px;
+    }
+    .project-tech-item {
+      font-size: 12px;
+      font-family: var(--font-display);
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 4px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+    .project-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .project-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 12px 28px;
+      border-radius: var(--r);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .project-link-btn--primary {
+      background: var(--accent);
+      color: var(--bg);
+      border: 1px solid var(--accent);
+    }
+    .project-link-btn--primary:hover {
+      background: transparent;
+      color: var(--accent);
+    }
+    .project-link-btn--secondary {
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+    }
+    .project-link-btn--secondary:hover {
+      background: var(--accent);
+      color: var(--bg);
+    }
+    .project-notfound {
+      text-align: center;
+      padding: 120px 0;
+    }
+    .project-notfound h2 {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+    .project-notfound p {
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+    @media (max-width: 600px) {
+      .project-detail { padding: 100px 16px 60px; }
+      .project-title { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container project-detail" id="app"></div>
+
+<script src="projects.js"></script>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get('id');
+  const app = document.getElementById('app');
+
+  const project = projects.find(p => p.id === id);
+
+  if (!project) {
+    app.innerHTML = `
+      <div class="project-notfound">
+        <h2>Proyek tidak ditemukan</h2>
+        <p>Proyek yang Anda cari tidak tersedia.</p>
+        <a href="../index.html" class="project-link-btn project-link-btn--primary">Kembali ke Beranda</a>
+      </div>
+    `;
+  } else {
+    const techHtml = project.tech.map(t => `<span class="project-tech-item">${t}</span>`).join('');
+    const liveHtml = project.liveurl
+      ? `<a href="${project.liveurl}" target="_blank" rel="noopener" class="project-link-btn project-link-btn--primary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Kunjungi Live
+        </a>`
+      : '';
+    const repoHtml = project.repourl
+      ? `<a href="${project.repourl}" target="_blank" rel="noopener" class="project-link-btn project-link-btn--secondary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          Lihat Repo
+        </a>`
+      : '';
+
+    app.innerHTML = `
+      <a href="../index.html" class="project-back">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Kembali
+      </a>
+      <img src="${project.img}" alt="${project.title}" class="project-img" />
+      <div class="project-status">${project.status}</div>
+      <h1 class="project-title">${project.title}</h1>
+      <p class="project-desc">${project.description}</p>
+      <div class="project-section-title">Teknologi</div>
+      <div class="project-tech">${techHtml}</div>
+      <div class="project-links">${liveHtml}${repoHtml}</div>
+    `;
+  }
+</script>
+
+</body>
+</html>
