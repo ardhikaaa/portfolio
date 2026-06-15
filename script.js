@@ -127,6 +127,40 @@ showMoreBtn.addEventListener('click', () => {
 
 updateCardVisibility();
 
+/* ===CERTIFICATE SHOW MORE=== */
+const certCards = document.querySelectorAll('#certGrid .cert-card');
+const certShowMoreBtn = document.getElementById('certShowMoreBtn');
+const CERT_INITIAL_COUNT = 3;
+let certExpanded = false;
+
+function updateCertVisibility() {
+  let count = 0;
+
+  certCards.forEach((card) => {
+    if (certExpanded) {
+      card.style.display = '';
+    } else {
+      card.style.display = count < CERT_INITIAL_COUNT ? '' : 'none';
+    }
+    card.classList.add('visible');
+    count++;
+  });
+
+  if (certCards.length <= CERT_INITIAL_COUNT) {
+    certShowMoreBtn.style.display = 'none';
+  } else {
+    certShowMoreBtn.style.display = '';
+    certShowMoreBtn.textContent = certExpanded ? 'Sembunyikan' : 'Lihat sertifikat lainnya';
+  }
+}
+
+certShowMoreBtn.addEventListener('click', () => {
+  certExpanded = !certExpanded;
+  updateCertVisibility();
+});
+
+updateCertVisibility();
+
 /* ===SMOOTH SCROLL JS FALLBACK=== */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {

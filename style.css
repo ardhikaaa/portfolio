@@ -879,60 +879,54 @@ section { position: relative; z-index: 1; }
 }
 
 .cert-card {
-    background: var(--surface);
+    background: var(--bg);
     border: 1px solid var(--border);
     border-radius: 12px;
-    padding: 28px;
-    transition: border-color var(--transition), transform var(--transition);
+    overflow: hidden;
+    transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
 }
 .cert-card:hover {
-    border-color: rgba(232,255,71,0.3);
-    transform: translateY(-4px);
+    transform: translateY(-6px);
+    border-color: rgba(232,255,71,0.35);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
 }
+.cert-card[data-hidden] { display: none; }
 
-.cert-stars {
-    display: flex;
-    gap: 3px;
-    margin-bottom: 16px;
-}
-.cert-stars svg {
-    width: 14px; height: 14px;
-    fill: var(--accent);
-}
-
-.cert-quote {
-    font-size: 14px;
-    color: rgba(232,232,240,0.8);
-    line-height: 1.75;
-    margin-bottom: 24px;
-    font-style: italic;
-}
-.cert-quote::before { content: '"'; color: var(--accent); font-size: 20px; line-height: 0; vertical-align: -4px; margin-right: 2px; }
-.cert-quote::after { content: '"'; color: var(--accent); font-size: 20px; line-height: 0; vertical-align: -4px; margin-left: 2px; }
-
-.cert-author {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-.cert-avatar {
-    width: 44px; height: 44px;
-    border-radius: 50%;
+.cert-img {
+    width: 100%;
+    aspect-ratio: 3/2;
     object-fit: cover;
-    border: 1.5px solid var(--border);
+    display: block;
+    transition: transform 0.5s ease;
 }
-.cert-name {
+.cert-card:hover .cert-img { transform: scale(1.04); }
+.cert-card-body { padding: 24px; }
+.cert-card-title {
     font-family: var(--font-display);
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 1.05rem;
+    font-weight: 700;
     color: var(--text);
+    margin-bottom: 18px;
 }
-.cert-role {
+.cert-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
     font-size: 12px;
-    color: var(--muted);
+    font-family: var(--font-display);
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: gap var(--transition);
 }
+.cert-link:hover { gap: 10px; }
 
 @media (max-width: 900px) {
+    .cert-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 520px) {
     .cert-grid { grid-template-columns: 1fr; }
 }
 
