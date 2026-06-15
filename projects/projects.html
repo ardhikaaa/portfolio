@@ -186,7 +186,7 @@
       <img src="${project.img}" alt="${project.title}" class="project-img" />
       <div class="project-status">${project.status}</div>
       <h1 class="project-title">${project.title}</h1>
-      <p class="project-desc">${project.description}</p>
+      ${project.description.split('\n\n').map(p => `<p class="project-desc">${p}</p>`).join('')}
       <div class="project-section-title">Teknologi</div>
       <div class="project-tech">${techHtml}</div>
       <div class="project-links">${liveHtml}${repoHtml}</div>
