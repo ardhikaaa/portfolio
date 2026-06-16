@@ -159,6 +159,19 @@ body::after {
 .nav-links a:hover::after,
 .nav-links a.active::after { width: 100%; }
 
+.nav-links a.nav-link-cv {
+    padding: 6px 16px;
+    border: 1px solid rgba(232,255,71,0.2);
+    border-radius: var(--r);
+    transition: var(--transition);
+}
+.nav-links a.nav-link-cv::after { display: none; }
+.nav-links a.nav-link-cv:hover {
+    border-color: var(--accent);
+    background: rgba(232,255,71,0.06);
+    color: var(--accent);
+}
+
 /* Hamburger */
 .hamburger {
     display: none;
@@ -210,6 +223,13 @@ body::after {
     transition: color var(--transition);
 }
 .mobile-menu a:hover { color: var(--accent); }
+
+.mobile-cv-link {
+    border: 1px solid rgba(232,255,71,0.25);
+    padding: 10px 28px;
+    border-radius: var(--r);
+    font-size: 20px !important;
+}
 
 @media (max-width: 768px) {
     .nav-links { display: none; }
@@ -529,6 +549,10 @@ section { position: relative; z-index: 1; }
     font-size: 12px;
     color: var(--muted);
     line-height: 1.6;
+}
+
+.about-cv-wrap {
+    margin-top: 32px;
 }
 
 @media (max-width: 900px) {
