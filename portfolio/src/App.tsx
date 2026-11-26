@@ -4,10 +4,10 @@ import TechText from './components/TechText';
 
 function App() {
   return (
-    <div className='bg-black w-full min-h-screen px-50'>
+    <div className='bg-[#0E0D12] w-full min-h-screen px-50'>
       <>
         <Navbar />
-        <div style={{ width: '100%', height: '480px', position: 'relative' }}>
+        <div className='min-h-screen' style={{ width: '100%', position: 'relative' }}>
           <TechText
             text="Ardhika Raditya"
             fontWeight={400}
@@ -22,7 +22,7 @@ function App() {
             guides
             fontFamily='Georgia, "Times New Roman", serif'
             letterSpacing={-0.03}
-            accentColor="#ffffff"
+            accentColor="#34D399"
             reach={200}
             softness={0.7}
             lineStyle="solid"
@@ -31,7 +31,7 @@ function App() {
             bounce={0.75}
             selection
             labels
-            color="#ffffff"
+            color="#34D399"
             align="center"
             draggable
             sweep
